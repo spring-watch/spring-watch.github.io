@@ -4,8 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spring Watch Screener</title>
-    <script type="module" crossorigin src="/assets/index-CJDumae9.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BsfD4-FD.css">
+    <script>
+      (function () {
+        var dark = false
+        try {
+          var t = localStorage.getItem('sw.theme.v1')
+          dark = t ? t === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches
+        } catch (e) {
+          try {
+            dark = matchMedia('(prefers-color-scheme: dark)').matches
+          } catch (e2) {}
+        }
+        if (dark) document.documentElement.classList.add('dark')
+      })()
+    </script>
+    <script type="module" crossorigin src="/assets/index-_ElVIMrG.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DMfSioLd.css">
   </head>
   <body>
     <div id="root"></div>
